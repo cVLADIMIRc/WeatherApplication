@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+##File with my api key
+C:\Users\tarae\source\repos\WeatherApplication\WeatherApplication\bin\Debug\apiKey.txt
+
 # User-specific files
 *.rsuser
 *.suo
