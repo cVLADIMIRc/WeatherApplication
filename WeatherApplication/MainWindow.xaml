@@ -7,10 +7,62 @@
         mc:Ignorable="d"
         Title="Weather" 
         Height="550" 
-        Width="400"
+        Width="800"
         Background="#333399"
+        WindowStartupLocation="CenterScreen"
         >
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.7*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Panel.ZIndex="0" Width="400" Height="540" Grid.RowSpan="5">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="3,1">
+                    <GradientStop Color="#c299ff" Offset="0.1" />
+                    <GradientStop Color="Blue" Offset="0.75" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Margin="20,10,0,0"  FontSize="20" Text="RU"/>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" FontStyle="Normal" Foreground="White" Text="WEATHER"/>
+        <ComboBox  Width="15" Height="15" Margin="350,0,20,30">
+            <ComboBoxItem>SADADAD</ComboBoxItem>
+        </ComboBox>
+        <Border Margin="150,0,150,210" BorderBrush="Azure" BorderThickness="3" Grid.Row="1">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" FontStyle="Normal" Foreground="White" Text="CITY"/>
+        </Border>
+        <Image Grid.Row="1"/>
+        <TextBlock Text="7C" FontSize="36" Margin="0,150,0,60" HorizontalAlignment="Center" Grid.Row="1"/>
+        <TextBlock Text="Cloudy" FontSize="36" Margin="0,200,0,5" HorizontalAlignment="Center" Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                
+            </Grid>
+            <Grid Grid.Column="1">
+                
+            </Grid>
+        </Grid>
+        </Grid>
+        <ScrollViewer Grid.Column="1">
+        <WrapPanel>
+            <Image Source="D:\Aall\cat.jpg"/>
+            <Image Source="D:\Aall\cat.jpg"/>
+            <Image Source="D:\Aall\cat.jpg"/>
+            <Image Source="D:\Aall\cat.jpg"/>
+            <Image Source="D:\Aall\cat.jpg"/>
+        </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

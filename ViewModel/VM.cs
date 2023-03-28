@@ -17,15 +17,16 @@ namespace ViewModel
     public class VM : INotifyPropertyChanged
     {
         private readonly string apiKey = File.ReadAllText("apiKey.txt");
-        private Weather newWeather;
-        public Weather NewWeather
+        private FutureWeather futureWeather;
+        private WeatherToday newWeather;
+        public WeatherToday NewWeather
         {
             get { return newWeather; }
             set { newWeather = value; OnPropertyChanged(); }
         }
         public VM() 
         {
-            newWeather = new Weather();
+            newWeather = new WeatherToday();
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
@@ -45,7 +46,7 @@ namespace ViewModel
                 var buffer = Encoding.UTF8.GetBytes(value);
                 file.Write(buffer, 0, buffer.Length);
             }
-            NewWeather = JsonConvert.DeserializeObject<Weather>(File.ReadAllText("weather_on_locate.json"));
+            NewWeather = JsonConvert.DeserializeObject<WeatherToday>(File.ReadAllText("weather_on_locate.json"));
             NewWeather.day = DateTime.Now.DayOfWeek;
         }
     }

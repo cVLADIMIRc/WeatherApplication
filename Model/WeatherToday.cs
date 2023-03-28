@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Model
 {
-    public class Weather : INotifyPropertyChanged
+    public class WeatherToday : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
