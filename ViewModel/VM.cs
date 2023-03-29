@@ -17,12 +17,17 @@ namespace ViewModel
     public class VM : INotifyPropertyChanged
     {
         private readonly string apiKey = File.ReadAllText("apiKey.txt");
-        private FutureWeather futureWeather;
         private WeatherToday newWeather;
+        private FutureWeather futureWeather;
         public WeatherToday NewWeather
         {
             get { return newWeather; }
             set { newWeather = value; OnPropertyChanged(); }
+        }
+        public FutureWeather FutureWeather
+        {
+            get { return futureWeather;}
+            set { futureWeather = value; OnPropertyChanged();}
         }
         public VM() 
         {
@@ -48,6 +53,14 @@ namespace ViewModel
             }
             NewWeather = JsonConvert.DeserializeObject<WeatherToday>(File.ReadAllText("weather_on_locate.json"));
             NewWeather.day = DateTime.Now.DayOfWeek;
+            GetJsonDataFutureWeather();
+        }
+        public async void GetJsonDataFutureWeather()
+        {
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync($"http://api.openweathermap.org/data/2.5/forecast?lat=56.0090968&lon=92.8725147&units=metric&appid={apiKey}");
+            string value = await httpResponseMessage.Content.ReadAsStringAsync();
+            FutureWeather = JsonConvert.DeserializeObject<FutureWeather>(value);
         }
     }
 }
