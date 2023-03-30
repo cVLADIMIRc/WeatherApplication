@@ -15,7 +15,7 @@
     <Grid>
         <Canvas>
             <Label FontSize="40" Canvas.Top="150" Canvas.Left="85" Content="HELLO"/>
-            <Button Width="150"  Height="30" Canvas.Top="340" Canvas.Left="75" Content="Get Weather"/>
+            <Button Command="{Binding }" Width="150"  Height="30" Canvas.Top="340" Canvas.Left="75" Content="Get Weather"/>
         </Canvas>
     </Grid>
 </Window>

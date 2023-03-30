@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace WeatherApplication
 {
@@ -22,11 +23,7 @@ namespace WeatherApplication
         public StartWindow()
         {
             InitializeComponent();
-        }
-
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-
+            DataContext = new VM();
         }
     }
 }

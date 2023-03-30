@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows;
 using Model;
 using System.IO;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
+using System.Security.Principal;
 
 namespace ViewModel
 {

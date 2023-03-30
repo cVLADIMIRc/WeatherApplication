@@ -22,8 +22,8 @@ namespace WeatherApplication
     {
         public MainWindow()
         {
-            DataContext = new VM();
             InitializeComponent();
+            DataContext = new VM();
         }
     }
 }
