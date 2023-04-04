@@ -10,7 +10,7 @@
         Width="800"
         Background="#333399"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="NoResize" Closing="Window_Closing"
         >
     <Grid>
         <Grid.ColumnDefinitions>

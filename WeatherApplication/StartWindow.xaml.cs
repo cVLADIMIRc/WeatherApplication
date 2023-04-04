@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,12 +19,23 @@ namespace WeatherApplication
     /// <summary>
     /// Логика взаимодействия для StartWindow.xaml
     /// </summary>
-    public partial class StartWindow : Window
+    public partial class StartWindow : Window, IWindow
     {
         public StartWindow()
         {
             InitializeComponent();
-            DataContext = new VM();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Process.GetCurrentProcess().Kill();
         }
     }
 }
