@@ -20,7 +20,7 @@ using ViewModel;
 namespace WeatherApplication
 {
 
-    public partial class MainWindow : Window, IWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {

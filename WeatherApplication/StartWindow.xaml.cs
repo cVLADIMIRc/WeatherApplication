@@ -19,7 +19,7 @@ namespace WeatherApplication
     /// <summary>
     /// Логика взаимодействия для StartWindow.xaml
     /// </summary>
-    public partial class StartWindow : Window, IWindow
+    public partial class StartWindow : Window
     {
         public StartWindow()
         {
